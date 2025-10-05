@@ -4,7 +4,7 @@ metadata:
   name: be-service
 spec:
   selector:
-    app.kubernetes.io/name: be
+    app: be
   ports:
     - protocol: TCP
       port: 3000

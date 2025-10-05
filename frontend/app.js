@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadProfile() {
         try {
-            const res = await fetch("http://localhost:3000/api/profile");
+            const res = await fetch("http://be-service:3000/api/profile");
             if (!res.ok) throw new Error('Network response not ok');
             const data = await res.json();
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkedin = document.getElementById('linkedin-input').value;
 
         try {
-            const res = await fetch("http://localhost:3000/api/profile", {
+            const res = await fetch("http://be-service:3000/api/profile", {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

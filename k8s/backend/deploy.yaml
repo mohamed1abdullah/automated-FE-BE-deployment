@@ -19,3 +19,15 @@ spec:
         image: mohamed010/backend-profile
         ports:
         - containerPort: 3000
+        volumeMounts:
+        - mountPath: /app/db
+          name: db-volume
+          # readOnly: true
+        envFrom:
+          - configMapRef:
+              name: env-be
+      volumes:
+      - name: db-volume
+        hostPath:
+          path: /home/docker/db
+          type: Directory
