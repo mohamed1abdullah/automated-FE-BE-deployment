@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="card">
+  <header>
+    <h1 id="name">Loading...</h1>
+    <p id="title">Personal Profile</p>
+  </header>
+
+  <section id="profile-view">
+    <div class="row"><strong>Name:</strong> <span id="view-name"></span></div>
+    <div class="row"><strong>Phone:</strong> <span id="view-phone"></span></div>
+    <div class="row"><strong>Email:</strong> <span id="view-email"></span></div>
+    <div class="row"><strong>LinkedIn:</strong> <a id="view-linkedin" href="#" target="_blank"></a></div>
+  </section>
+
+  <section id="edit-view" style="display: none;">
+    <div class="row"><strong>Name:</strong> <input type="text" id="name-input"></div>
+    <div class="row"><strong>Phone:</strong> <input type="text" id="phone-input"></div>
+    <div class="row"><strong>Email:</strong> <input type="email" id="email-input"></div>
+    <div class="row"><strong>LinkedIn:</strong> <input type="text" id="linkedin-input"></div>
+  </section>
+
+  <footer>
+    <button id="edit-btn">Edit Profile</button>
+    <button id="save-btn" style="display: none;">Save Profile</button>
+    <button id="cancel-btn" style="display: none;">Cancel</button>
+  </footer>
+</main>
+
+<script src="app.js?v=2"></script>
+</body>
+</html>
