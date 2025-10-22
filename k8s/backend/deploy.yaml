@@ -27,6 +27,11 @@ spec:
         envFrom:
           - configMapRef:
               name: env-be
+      tolerations:
+      - key: "be-worker"
+        operator: "Equal"
+        value: "be-worker"
+        effect: "NoSchedule"
       volumes:
       - name: db-volume
         hostPath:
