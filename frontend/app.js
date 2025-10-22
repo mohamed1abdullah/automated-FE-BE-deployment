@@ -5,13 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveBtn = document.getElementById('save-btn');
     const cancelBtn = document.getElementById('cancel-btn');
 
+    const API_BASE_URL = window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "http://be-service.be-ns.svc.cluster.local:3000";
+
     console.log('editBtn:', editBtn);
     console.log('saveBtn:', saveBtn);
     console.log('cancelBtn:', cancelBtn);
 
     async function loadProfile() {
         try {
-            const res = await fetch("http://be-service:3000/api/profile");
+            const res = await fetch(`${API_BASE_URL}/api/profile`);
             if (!res.ok) throw new Error('Network response not ok');
             const data = await res.json();
 
@@ -39,12 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkedin = document.getElementById('linkedin-input').value;
 
         try {
-            const res = await fetch("http://be-service:3000/api/profile", {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, phone, email, linkedin })
+            const res = await fetch(`${API_BASE_URL}/api/profile`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, phone, email, linkedin })
             });
 
             if (!res.ok) throw new Error('Network response not ok');
